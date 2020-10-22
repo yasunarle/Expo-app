@@ -1,4 +1,4 @@
-## Practice Samethings in This Expo APP
+My PlayGround in This Expo APP
 
 ## Librarys
 
@@ -7,6 +7,10 @@
 - Localization
 
   - i18n-js
+
+- Google Translate
+
+- Env Config
 
 - react-spring
 
