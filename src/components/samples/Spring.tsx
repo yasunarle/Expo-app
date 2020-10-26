@@ -1,23 +1,14 @@
-// Note: Type Error => 46, 50
+// Note: Type Error => 2個
 import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 
-import {
-  useSpring,
-  animated,
-  useTransition,
-  useTrail,
-} from 'react-spring/native'
+import { useSpring, animated, useTransition, useTrail } from 'react-spring/native'
 
 const AnimatedView = animated(View)
 const AnimatedText = animated(Text)
 
 const SampleSpringComponent = () => {
-  const [users, setUsers] = useState([
-    { name: 'yasunari' },
-    { name: 'react man' },
-    { name: 'hoge' },
-  ])
+  const [users, setUsers] = useState([{ name: 'yasunari' }, { name: 'react man' }, { name: 'hoge' }])
 
   const springProps = useSpring({
     opacity: 1,

@@ -13,30 +13,19 @@ import Animated, {
 const { Value, timing } = Animated
 
 const SampleReanimatedV2 = () => {
-  const users = ['yasunari', 'react man', 'hoge']
-  const trails = []
-  // Note: Sample
-  const sheredVal = useSharedValue(0)
-  const transX = new Value(0)
   // Note: Setup
   const offset = useSharedValue(50)
   const opacity = useSharedValue(0)
+  const config = {
+    duration: 650,
+    easing: Easing.in(Easing.ease),
+  }
 
   // Note: Methods
   const animatedStyles = useAnimatedStyle(() => {
     return {
-      transform: [
-        {
-          translateX: withTiming(offset.value, {
-            duration: 650,
-            easing: Easing.in(Easing.ease),
-          }),
-        },
-      ],
-      opacity: withTiming(opacity.value, {
-        duration: 650,
-        easing: Easing.in(Easing.ease),
-      }),
+      transform: [{ translateX: withTiming(offset.value, config) }],
+      opacity: withTiming(opacity.value, config),
     }
   })
 
@@ -49,7 +38,7 @@ const SampleReanimatedV2 = () => {
   return (
     <View style={styles.container}>
       <Animated.View style={[animatedStyles]}>
-        <Text style={{ fontSize: 40 }}>Spring</Text>
+        <Text style={{ fontSize: 40 }}>単体アニメーション</Text>
       </Animated.View>
       {/* for each */}
 
